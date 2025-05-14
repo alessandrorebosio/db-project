@@ -4,9 +4,11 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{hyperref}
-\usepackage[a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{tabularx}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+% \usepackage{showframe}
 
 % Questo commentalo se vuoi scrivere in inglese.
 \usepackage[italian]{babel}
@@ -16,7 +18,7 @@
 \title{Elaborato per il corso di\\''Basi di Dati''}
 \author{
     Maisam Noumi\\
-    Alessandro Rebosio\\
+    Alessandro Rebosio (alessandro.rebosio@studio.unibo.it)\\
     Filippo Ricciotti
 }
 \date{\today}
@@ -66,9 +68,42 @@ camere e dei servizi, e le recensioni ricevute. Possono generare report periodic
 preferenze dei clienti e l'efficacia delle promozioni. Inoltre, il sistema supporta la gestione di account multipli per lo staff, con
 diversi livelli di accesso in base al ruolo (es. receptionist, responsabile del ristorante, gestore della piscina).
 
-\section{Rilevamento delle ambiguità e correzioni proposte}
+\section{Estrazione dei concetti principali}
+\begin{center}
+    \begin{tabularx}{\textwidth}{ l X r }
+        \rowcolor{blue!30}
+        \textbf{Termine}     & \textbf{Descrizione}                                                                                & \textbf{Sinonimi} \\
+        \hline
+        Opsite               & Persona che utilizza i servizi dell'agriturismo, registrata con dati anagrafici e contatti.         & Utente            \\
+        \hline
+        Prenotazione         & Richiesta di utilizzo di un servizio (camera, tavolo, lettino, attività) in un determinato periodo. & Prenotazione      \\
+        \hline
+        Camera               & Struttura ricettiva con tipologia (singola, doppia, suite) e capacità definita.                     & Alloggio          \\
+        \hline
+        Tavolo               & Postazione nel ristorante, con numero di posti e posizione (interno/esterno).                       & Tavolo            \\
+        \hline
+        Lettino              & Postazione nell'area piscina, prnotabile per fasce orarie.                                          & Ombrellone        \\
+        \hline
+        Attività con animali & Esperienza guidata con animali della fattoria didattica.                                            & Visita            \\
+        \hline
+        Campo da calcio      & Area sportiva prenotabile per parite e tornei.                                                      & Campo sportivo    \\
+        \hline
+        Pacchetto            & Combinazione di servizi con prezzo personalizzato.                                                  & Offerta           \\
+        \hline
+        Recensione           & Valutazione e commento lascaiti da un cliente su un servizio utilizzato.                            & Valutazione       \\
+        \hline
+        Amministratore       & Utente con i privilegi per gestire disponibilità, prenotiazioni e report.                           & Staff             \\
+        \hline
+        Evento               & Attività speciale organizzate (tornei, cene a tema).                                                & Attività          \\
+        \hline
+        Menu                 & Proposta gastronimica del ristorante/bar, con allergeni e stagionalità.                             & Menu              \\
+        \hline
+        Disponibilità        & Sato temporale e quantitativo di un servizio.                                                       & Capacità residua  \\
+        \hline
+        Abbonamento          & Formula di accesso ripetuto a servizi                                                               & Mermbership       \\
+    \end{tabularx}
+\end{center}
 
-\section{Definizione delle specifiche in linguaggio naturale ed estrazione dei concetti principali}
 
 
 \chapter{Preogettazione concettuale}
