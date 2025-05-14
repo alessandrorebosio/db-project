@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,11pt]{report}
 
 \usepackage{alltt, fancyvrb, url}
 \usepackage{graphicx}
@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 % Questo commentalo se vuoi scrivere in inglese.
 \usepackage[italian]{babel}
@@ -20,6 +21,7 @@
 }
 \date{\today}
 
+
 \begin{document}
 
 
@@ -28,7 +30,41 @@
 \tableofcontents
 
 \chapter{Analisi dei requisiti}
+Si ha come obiettivo la realizzazione di un database per la gestione di un agriturismo che offre un'ampia gamma di servizi: ristorazione,
+ospitalità, piscina, attività con animali, sport e molto altro.
+
 \section{Intervista}
+Si vuole tenere traccia dei clienti dell'agriturismo memorizzandone nome, cognome, codice fiscale, indirizzo email e numero di telefono. Al
+momento della registrazione, viene creato un account personale con credenziali di accesso per la piattaforma. Ogni cliente
+può effettuare prenotazioni solo se autenticato, e ogni prenotazione viene registrata con i relativi dettagli (servizio richiesto, data,
+orario e numero di partecipanti).
+
+Le prenotazioni possono riguardare diversi servizi: camere (con specifica della tipologia e del periodo di soggiorno), tavoli al
+ristorante (indicando l'orario e il numero di coperti), lettini in piscina (con fascia oraria e posizione), attività con animali
+(specificando il tipo di esperienza) e campo da calcio (indicando la durata e l'eventuale partecipazione a tornei). Ogni servizio ha
+regole specifiche: ad esempio, i lettini in piscina sono prenotabili per fasce di 2 ore, mentre il campo da calcio può essere prenotato
+per un'ora o più, a seconda della disponibilità.
+
+I clienti possono acquistare sia servizi singoli che pacchetti combinati, creati dallo staff o personalizzati in base alle esigenze. I pacchetti
+possono includere più servizi (es. pernottamento + cena + attività con animali) e hanno un prezzo specifico, con eventuali sconti applicabili
+in base alla stagione o a promozioni speciali. Ogni pacchetto può essere modificato dallo staff per adattarlo a particolari esigenze dei clienti.
+
+Ogni prenotazione viene confermata via email o SMS, con la possibilità di modificarla o cancellarla entro un certo termine. In caso di
+mancata presentazione senza preavviso, può essere applicata una penale. Le prenotazioni per eventi speciali (come tornei o cene a tema) richiedono
+spesso un acconto non rimborsabile.
+
+L'agriturismo tiene traccia di tutte le prenotazioni effettuate dai clienti, mantenendo uno storico che permette di analizzare le preferenze e di
+proporre offerte personalizzate. I clienti possono lasciare recensioni per ogni servizio utilizzato, valutandolo con un voto da 1 a 5
+stelle e aggiungendo un commento. Le recensioni vengono moderate dallo staff e possono essere utilizzate per migliorare i servizi offerti.
+
+Il sistema permette anche la gestione degli eventi organizzati dall'agriturismo, come tornei di calcio o laboratori con animali. Per ogni
+evento è possibile definire il numero massimo di partecipanti, il prezzo e le date disponibili. I clienti possono iscriversi agli
+eventi direttamente dalla piattaforma, ricevendo una conferma e i dettagli organizzativi.
+
+Lo staff dell'agriturismo ha accesso a una dashboard che mostra in tempo reale lo stato delle prenotazioni, l'occupazione delle
+camere e dei servizi, e le recensioni ricevute. Possono generare report periodici per analizzare l'andamento delle prenotazioni, le
+preferenze dei clienti e l'efficacia delle promozioni. Inoltre, il sistema supporta la gestione di account multipli per lo staff, con
+diversi livelli di accesso in base al ruolo (es. receptionist, responsabile del ristorante, gestore della piscina).
 
 \section{Rilevamento delle ambiguità e correzioni proposte}
 
