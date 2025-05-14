@@ -1,7 +1,19 @@
-# DB Project
+# DataBase - Project
 
+## Project Description
+This project implements a comprehensive database system for managing an agritourism facility. The system handles:
+- Guest reservations (rooms, restaurant tables, pool loungers)
+- Activity bookings (farm visits, sports facilities)
+- Package deals creation and management
+- Reviews and feedback system
+- Staff administration tools
+- Real-time availability tracking
 
-# Componenti del Team
+## Technical Specifications
+- Database: MySQL
+- Backend: to be decided...
+
+# Team Members
 
 #### Maisam Noumi
 - **GitHub**: [ennoumi](https://github.com/ennoumi)
