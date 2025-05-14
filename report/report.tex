@@ -1,11 +1,14 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,11pt]{report}
 
 \usepackage{alltt, fancyvrb, url}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+% \usepackage{showframe}
 
 % Questo commentalo se vuoi scrivere in inglese.
 \usepackage[italian]{babel}
@@ -15,10 +18,11 @@
 \title{Elaborato per il corso di\\''Basi di Dati''}
 \author{
     Maisam Noumi\\
-    Rebosio Alessandro\\
-    Ricciotti Filippo
+    Alessandro Rebosio (alessandro.rebosio@studio.unibo.it)\\
+    Filippo Ricciotti
 }
 \date{\today}
+
 
 \begin{document}
 
@@ -28,10 +32,126 @@
 \tableofcontents
 
 \chapter{Analisi dei requisiti}
+Si ha come obiettivo la realizzazione di un database per la gestione di un agriturismo che offre un'ampia gamma di servizi: ristorazione,
+ospitalità, piscina, attività con animali, sport e molto altro.
+
+\section{Intervista}
+Si vuole tenere traccia dei clienti dell'agriturismo memorizzandone nome, cognome, codice fiscale, indirizzo email e numero di telefono. Al
+momento della registrazione, viene creato un account personale con credenziali di accesso per la piattaforma. Ogni cliente
+può effettuare prenotazioni solo se autenticato, e ogni prenotazione viene registrata con i relativi dettagli (servizio richiesto, data,
+orario e numero di partecipanti).
+
+Le prenotazioni possono riguardare diversi servizi: camere (con specifica della tipologia e del periodo di soggiorno), tavoli al
+ristorante (indicando l'orario e il numero di coperti), lettini in piscina (con fascia oraria e posizione), attività con animali
+(specificando il tipo di esperienza) e campo da calcio (indicando la durata e l'eventuale partecipazione a tornei). Ogni servizio ha
+regole specifiche: ad esempio, i lettini in piscina sono prenotabili per fasce di 2 ore, mentre il campo da calcio può essere prenotato
+per un'ora o più, a seconda della disponibilità.
+
+I clienti possono acquistare sia servizi singoli che pacchetti combinati, creati dallo staff o personalizzati in base alle esigenze. I pacchetti
+possono includere più servizi (es. pernottamento + cena + attività con animali) e hanno un prezzo specifico, con eventuali sconti applicabili
+in base alla stagione o a promozioni speciali. Ogni pacchetto può essere modificato dallo staff per adattarlo a particolari esigenze dei clienti.
+
+Ogni prenotazione viene confermata via email o SMS, con la possibilità di modificarla o cancellarla entro un certo termine. In caso di
+mancata presentazione senza preavviso, può essere applicata una penale. Le prenotazioni per eventi speciali (come tornei o cene a tema) richiedono
+spesso un acconto non rimborsabile.
+
+L'agriturismo tiene traccia di tutte le prenotazioni effettuate dai clienti, mantenendo uno storico che permette di analizzare le preferenze e di
+proporre offerte personalizzate. I clienti possono lasciare recensioni per ogni servizio utilizzato, valutandolo con un voto da 1 a 5
+stelle e aggiungendo un commento. Le recensioni vengono moderate dallo staff e possono essere utilizzate per migliorare i servizi offerti.
+
+Il sistema permette anche la gestione degli eventi organizzati dall'agriturismo, come tornei di calcio o laboratori con animali. Per ogni
+evento è possibile definire il numero massimo di partecipanti, il prezzo e le date disponibili. I clienti possono iscriversi agli
+eventi direttamente dalla piattaforma, ricevendo una conferma e i dettagli organizzativi.
+
+Lo staff dell'agriturismo ha accesso a una dashboard che mostra in tempo reale lo stato delle prenotazioni, l'occupazione delle
+camere e dei servizi, e le recensioni ricevute. Possono generare report periodici per analizzare l'andamento delle prenotazioni, le
+preferenze dei clienti e l'efficacia delle promozioni. Inoltre, il sistema supporta la gestione di account multipli per lo staff, con
+diversi livelli di accesso in base al ruolo (es. receptionist, responsabile del ristorante, gestore della piscina).
+
+\section{Estrazione dei concetti principali}
+\begin{center}
+    \begin{tabularx}{\textwidth}{ l X r }
+        \rowcolor{blue!30}
+        \textbf{Termine}     & \textbf{Descrizione}                                                                                & \textbf{Sinonimi} \\
+        \hline
+        Opsite               & Persona che utilizza i servizi dell'agriturismo, registrata con dati anagrafici e contatti.         & Utente            \\
+        \hline
+        Prenotazione         & Richiesta di utilizzo di un servizio (camera, tavolo, lettino, attività) in un determinato periodo. & Prenotazione      \\
+        \hline
+        Camera               & Struttura ricettiva con tipologia (singola, doppia, suite) e capacità definita.                     & Alloggio          \\
+        \hline
+        Tavolo               & Postazione nel ristorante, con numero di posti e posizione (interno/esterno).                       & Tavolo            \\
+        \hline
+        Lettino              & Postazione nell'area piscina, prnotabile per fasce orarie.                                          & Ombrellone        \\
+        \hline
+        Attività con animali & Esperienza guidata con animali della fattoria didattica.                                            & Visita            \\
+        \hline
+        Campo da calcio      & Area sportiva prenotabile per parite e tornei.                                                      & Campo sportivo    \\
+        \hline
+        Pacchetto            & Combinazione di servizi con prezzo personalizzato.                                                  & Offerta           \\
+        \hline
+        Recensione           & Valutazione e commento lascaiti da un cliente su un servizio utilizzato.                            & Valutazione       \\
+        \hline
+        Amministratore       & Utente con i privilegi per gestire disponibilità, prenotiazioni e report.                           & Staff             \\
+        \hline
+        Evento               & Attività speciale organizzate (tornei, cene a tema).                                                & Attività          \\
+        \hline
+        Menu                 & Proposta gastronimica del ristorante/bar, con allergeni e stagionalità.                             & Menu              \\
+        \hline
+        Disponibilità        & Sato temporale e quantitativo di un servizio.                                                       & Capacità residua  \\
+        \hline
+        Abbonamento          & Formula di accesso ripetuto a servizi                                                               & Mermbership       \\
+    \end{tabularx}
+\end{center}
+
+\section{Sintesi dei concetti}
+\begin{quote}
+    Per ogni \textbf{Cliente} dell'agriturismo verrano memorizzati, nome, cognome, codice fiscale ed eventali metodi per contattarlo tramite email o telefono. Esso
+    può effettuare delle \textbf{prenotazioni} per uno o piùservizi offerti dalla struttura, tra cui:
+    \begin{itemize}
+        \item \textbf{Camere}, caratterizzate da tipologia (singola, doppia, suite) e prezzo per notte.
+        \item \textbf{Tavoli} nel ristorante, con specifica del numero dei coperti e dell'orario desiderato.
+        \item \textbf{Lettini} in piscina, prenotabili per fasce orarie di 2 ore.
+        \item \textbf{Attività con animli}, come visite giudate alla fattoria didattica.
+        \item \textbf{Campo da calcio}, disponibile per slot orari predefiniti.
+    \end{itemize}
+    Le \textbf{prenotazioni} possono essere effettuate sia per \textbf{servizi singoli} che per \textbf{pacchetti} combinati, creati dallo \textbf{staff} o personalizzati
+    dal cliente. Ogni pacchetto include uno o più servizi a prezzo convenzionato (es. "Soggiorno Completo" con camera, colazione e accessso piscina).
+
+    Dopo aver utilizzato un \textbf{servizio} il cliente potrà lasciare uuna \textbf{recensione}, composta da un voto e un commento libero. Le recensioni
+    vengono moderate dallo staff e associate al profilo del cliente e al servizio recensito.
+
+    Lo \textbf{staff} dell'agriturismo è diviso in ruoli (reception, ristorante, piscina), ha accesso a strumenti per gestire la disponibilità reale di tutti i serivizi,
+    organizzare \textbf{eventi} speciali (tornei, cena a tema).
+
+    Particolare attenzione viene posta ai \textbf{Vincoli operativi}, come capacita massima dei tavoli o lettini, gestione delle fasce orarie di apertura per i servizi e
+    politiche di cancellazione dei servizi.
+\end{quote}
 
 \chapter{Preogettazione concettuale}
+\section{Schema scheletro}
+\section{Raffinamenti proposti}
+
+\section{Schema concettuale finale}
+
 
 \chapter{Progettazione logica}
+\section{Stima del volume dei dati}
+
+\section{Descrizione delle operazioni principali e stima della loro frequenza}
+
+\section{Schemi di navigazione e tabelle degli accessi}
+
+\section{Raffinamento dello schema}
+
+\section{Analisi delle ridondanze}
+
+\section{Traduzione di entità e associazioni in relazioni}
+
+\section{Schema relazionale finale}
+
+\section{Traduzione delle operazioni in query SQL}
+
 
 \chapter{Progettazione dell'applicazione}
 
