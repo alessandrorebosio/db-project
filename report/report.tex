@@ -36,37 +36,32 @@ Si ha come obiettivo la realizzazione di un database per la gestione di un agrit
 ospitalità, piscina, attività con animali, sport e molto altro.
 
 \section{Intervista}
-Si vuole tenere traccia dei clienti dell'agriturismo memorizzandone nome, cognome, codice fiscale, indirizzo email e numero di telefono. Al
-momento della registrazione, viene creato un account personale con credenziali di accesso per la piattaforma. Ogni cliente
-può effettuare prenotazioni solo se autenticato, e ogni prenotazione viene registrata con i relativi dettagli (servizio richiesto, data,
-orario e numero di partecipanti).
+Il sistema che si vuole realizzare è finalizzato alla gestione integrata delle attività di un agriturismo, con particolare focus sulla clientela e sui servizi offerti.
 
-Le prenotazioni possono riguardare diversi servizi: camere (con specifica della tipologia e del periodo di soggiorno), tavoli al
-ristorante (indicando l'orario e il numero di coperti), lettini in piscina (con fascia oraria e posizione), attività con animali
-(specificando il tipo di esperienza) e campo da calcio (indicando la durata e l'eventuale partecipazione a tornei). Ogni servizio ha
-regole specifiche: ad esempio, i lettini in piscina sono prenotabili per fasce di 2 ore, mentre il campo da calcio può essere prenotato
-per un'ora o più, a seconda della disponibilità.
+La memorizzazione di nome, cognome, codice fiscale, indirizzo email e numero di telefono degli utenti è propedeutica alla creazione di un account individuale, 
+al quale vengono associate credenziali di accesso univoche. 
+\\L'autenticazione tramite tali credenziali è una condizione necessaria per l'interazione con la piattaforma di prenotazione, 
+garantendo che ogni operazione sia riconducibile a un cliente specifico e registrato.
 
-I clienti possono acquistare sia servizi singoli che pacchetti combinati, creati dallo staff o personalizzati in base alle esigenze. I pacchetti
-possono includere più servizi (es. pernottamento + cena + attività con animali) e hanno un prezzo specifico, con eventuali sconti applicabili
-in base alla stagione o a promozioni speciali. Ogni pacchetto può essere modificato dallo staff per adattarlo a particolari esigenze dei clienti.
+Il sistema permette di gestire un catalogo di servizi diversificato, ognuno dotato di parametri e vincoli operativi propri. 
+Le prenotazioni possono riguardare il pernottamento in camere (con specifica della tipologia e del periodo di soggiorno), la riserva di tavoli al ristorante (indicando orario e numero di coperti) o l'accesso ai lettini in piscina (prenotabili per fascia oraria e posizione). 
+Sono incluse anche attività ricreative, come le esperienze con animali (specificandone la tipologia) e la prenotazione del campo da calcio.
 
-Ogni prenotazione viene confermata via email o SMS, con la possibilità di modificarla o cancellarla entro un certo termine. In caso di
-mancata presentazione senza preavviso, può essere applicata una penale. Le prenotazioni per eventi speciali (come tornei o cene a tema) richiedono
-spesso un acconto non rimborsabile.
+La granularità del sistema consente di applicare regole precise, come la durata fissa per alcuni noleggi o la disponibilità variabile in base all'occupazione di un determinato servizio. 
+\\Ad esempio, i lettini in piscina sono prenotabili per fasce di 2 ore, mentre il campo da calcio può essere affittato per un'ora o più, a seconda della disponibilità.
 
-L'agriturismo tiene traccia di tutte le prenotazioni effettuate dai clienti, mantenendo uno storico che permette di analizzare le preferenze e di
-proporre offerte personalizzate. I clienti possono lasciare recensioni per ogni servizio utilizzato, valutandolo con un voto da 1 a 5
-stelle e aggiungendo un commento. Le recensioni vengono moderate dallo staff e possono essere utilizzate per migliorare i servizi offerti.
+Non è previsto solo l'acquisto di prestazioni singole, ma anche di pacchetti combinati che possono essere standardizzati dallo staff o personalizzati in base alle esigenze dei clienti. 
+Questi pacchetti aggregano più servizi a una tariffa dedicata, soggetta a variazioni basate sulla stagionalità o su promozioni speciali attive.
 
-Il sistema permette anche la gestione degli eventi organizzati dall'agriturismo, come tornei di calcio o laboratori con animali. Per ogni
-evento è possibile definire il numero massimo di partecipanti, il prezzo e le date disponibili. I clienti possono iscriversi agli
-eventi direttamente dalla piattaforma, ricevendo una conferma e i dettagli organizzativi.
+L'agriturismo tiene traccia di tutte le prenotazioni effettuate, mantenendo uno storico che permette di analizzare le preferenze e di predisporre offerte personalizzate.
 
-Lo staff dell'agriturismo ha accesso a una dashboard che mostra in tempo reale lo stato delle prenotazioni, l'occupazione delle
-camere e dei servizi, e le recensioni ricevute. Possono generare report periodici per analizzare l'andamento delle prenotazioni, le
-preferenze dei clienti e l'efficacia delle promozioni. Inoltre, il sistema supporta la gestione di account multipli per lo staff, con
-diversi livelli di accesso in base al ruolo (es. receptionist, responsabile del ristorante, gestore della piscina).
+A completamento del ciclo di fruizione del servizio, i clienti hanno la facoltà di lasciare una recensione, articolata in un voto da 1 a 5 stelle e un campo testuale per eventuali commenti. 
+\\Queste valutazioni rappresentano un prezioso strumento per il monitoraggio della qualità e l'ottimizzazione dell'offerta. Il sistema estende inoltre le sue funzionalità alla gestione di eventi speciali organizzati dalla struttura, permettendo di definirne le caratteristiche (capienza massima, costi, calendario) e di amministrare le iscrizioni direttamente dalla piattaforma.
+
+Per il personale operativo, verrà sviluppata una dashboard che fornisce un monitoraggio in tempo reale di indicatori chiave, come lo stato delle prenotazioni e l'occupazione delle risorse. 
+La piattaforma permetterà la generazione di report periodici per l'analisi dell'andamento delle prestazioni, delle preferenze della clientela e dell'efficacia delle promozioni. 
+\\Inoltre, al fine di garantire la sicurezza e la corretta segmentazione delle responsabilità, 
+il sistema implementa un controllo degli accessi basato sui ruoli, assegnando a ogni membro dello staff permessi specifici in linea con le proprie mansioni.
 
 \section{Estrazione dei concetti principali}
 \begin{center}
