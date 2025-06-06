@@ -103,30 +103,32 @@ il sistema implementa un controllo degli accessi basato sui ruoli, assegnando a 
     \end{tabularx}
 \end{center}
 
+
+\section{Sintesi dei concetti}
 \begin{quote}
-Il modello concettuale del sistema si articola attorno ai seguenti elementi chiave:
-
-\begin{itemize}
-    \item \textbf{Cliente:} L'entità centrale del sistema. Per ogni cliente vengono registrati i dati anagrafici (nome, cognome, codice fiscale) e di contatto (email, telefono), associati a un account personale per l'accesso e le prenotazioni.
-
-    \item \textbf{Servizi e Prenotazioni:} Il cliente autenticato può effettuare prenotazioni per i diversi servizi offerti, che costituiscono il nucleo operativo della piattaforma. Questi includono:
-    \begin{itemize}
-        \item \textbf{Camere:} Differenziate per tipologia (es. singola, doppia, suite) e associate a una tariffa notturna.
-        \item \textbf{Tavoli al Ristorante:} Prenotabili specificando il numero di coperti e l'orario.
-        \item \textbf{Lettini in Piscina:} Disponibili per fasce orarie predefinite.
-        \item \textbf{Attività con Animali:} Come visite guidate alla fattoria didattica.
-        \item \textbf{Campo da Calcio:} Disponibile per slot orari predefiniti.
-    \end{itemize}
-
-    \item \textbf{Pacchetti Combinati:} Oltre ai servizi singoli, il sistema gestisce pacchetti che aggregano più prestazioni a un prezzo convenzionato. Possono essere standard (creati dallo staff) o personalizzati.
-
-    \item \textbf{Recensioni:} Dopo la fruizione di un servizio, il cliente può lasciare una valutazione, tipicamente con un voto numerico (es. 1-5 stelle), e un commento testuale.
-
-    \item \textbf{Staff ed Eventi:} Il personale, gestito con account e ruoli specifici, utilizza la piattaforma per amministrare la disponibilità dei servizi e organizzare eventi speciali (es. tornei, cene a tema).
-\end{itemize}
-
- Particolare attenzione verrò posta sulla gestione dei \textbf{Vincoli operativi}, che definiscono le logiche e le limitazioni specifiche di ogni servizio, come la capacità massima, gli orari e le politiche di prenotazione.
+Il modello concettuale del sistema si articola attorno a diversi elementi chiave, interconnessi 
+per creare una piattaforma gestionale completa. \\[6pt]
+Più nello specifico, al centro del sistema si trova il \textbf{Cliente}, per il quale vengono registrati i dati anagrafici e di contatto 
+(nome, cognome, codice fiscale, email, telefono), associati a un account personale che ne abilita l'accesso e 
+la capacità di effettuare prenotazioni. \\[6pt]
+Una volta autenticato, il cliente può effettuare \textbf{prenotazioni} per un'ampia gamma di \textbf{servizi} 
+che costituiscono il nucleo operativo della piattaforma: dalle \textbf{camere}, differenziate per tipologia 
+e tariffa notturna, ai \textbf{tavoli al ristorante}, prenotabili per orario e numero di coperti; 
+dai \textbf{lettini in piscina}, disponibili per fasce orarie predefinite, fino alle \textbf{attività con animali}, 
+come le visite guidate, e all'utilizzo del \textbf{campo da calcio} per slot orari. \\[6pt]
+Oltre ai servizi singoli, il sistema gestisce anche \textbf{pacchetti combinati}, 
+che aggregano più prestazioni a un prezzo convenzionato e possono essere sia standard, 
+creati dallo staff, sia personalizzati. \\[6pt]
+A seguito della fruizione di un servizio, è prevista la possibilità per il cliente di lasciare una \textbf{recensione},
+composta da una valutazione numerica e un commento testuale, al fine di monitorare la qualità dell'offerta. \\[6pt]
+La gestione da parte del personale è supportata da account dedicati con ruoli specifici,
+che permettono allo \textbf{staff} non solo di amministrare la disponibilità dei servizi, 
+ma anche di organizzare \textbf{eventi} speciali come tornei o cene a tema. \\[6pt]
+Particolare attenzione verrà posta sulla gestione dei \textbf{vincoli operativi}, 
+i quali definiscono le logiche e le limitazioni specifiche di ogni servizio (come la capacità massima, gli orari e le politiche di prenotazione) garantendo la coerenza e il corretto funzionamento dell'intero sistema.
 \end{quote}
+
+
 
 \chapter{Preogettazione concettuale}
 \section{Schema scheletro}
