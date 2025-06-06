@@ -17,7 +17,7 @@
 
 \title{Elaborato per il corso di\\''Basi di Dati''}
 \author{
-    Maisam Noumi\\
+    Maisam Noumi \\
     Alessandro Rebosio (alessandro.rebosio@studio.unibo.it)\\
     Filippo Ricciotti
 }
@@ -63,39 +63,43 @@ La piattaforma permetterà la generazione di report periodici per l'analisi dell
 \\Inoltre, al fine di garantire la sicurezza e la corretta segmentazione delle responsabilità, 
 il sistema implementa un controllo degli accessi basato sui ruoli, assegnando a ogni membro dello staff permessi specifici in linea con le proprie mansioni.
 
-\section{Estrazione dei concetti principali}
+\section{Estrazione dei Concetti Principali}
+% La seguente riga aumenta lo spazio verticale tra le righe
+\renewcommand{\arraystretch}{1.5} 
 \begin{center}
-    \begin{tabularx}{\textwidth}{ l X r }
-        \rowcolor{blue!30}
-        \textbf{Termine}     & \textbf{Descrizione}                                                                                & \textbf{Sinonimi} \\
+% Prima e terza colonna la definisco con "l" per allinearne il contenuto a sinistra. 
+% Quella centrale con "X" per consentire alla colonna di espandersi per riempire lo spazio disponibile 
+    \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X l}
+        \rowcolor{blue!25}
+        \textbf{Termine } &                         \textbf{Descrizione} &                          \textbf{Sinonimi } \\
         \hline
-        Opsite               & Persona che utilizza i servizi dell'agriturismo, registrata con dati anagrafici e contatti.         & Utente            \\
+        \textbf{Cliente} & Persona che utilizza i servizi dell'agriturismo, registrata con dati anagrafici e di contatto. & Ospite, Utente \\
         \hline
-        Prenotazione         & Richiesta di utilizzo di un servizio (camera, tavolo, lettino, attività) in un determinato periodo. & Prenotazione      \\
+        \textbf{Prenotazione} & Richiesta per l'utilizzo di un servizio specifico (camera, tavolo, ecc.) in una data e ora definite. & Riservazione \\
         \hline
-        Camera               & Struttura ricettiva con tipologia (singola, doppia, suite) e capacità definita.                     & Alloggio          \\
+        \textbf{Camera} & Unità ricettiva per il soggiorno, caratterizzata da tipologia (es. singola, doppia) e capacità. & Alloggio \\
         \hline
-        Tavolo               & Postazione nel ristorante, con numero di posti e posizione (interno/esterno).                       & Tavolo            \\
+        \textbf{Tavolo} & Postazione nel ristorante definita da un numero di coperti e da una posizione specifica. & Postazione \\
         \hline
-        Lettino              & Postazione nell'area piscina, prnotabile per fasce orarie.                                          & Ombrellone        \\
+        \textbf{Lettino} & Area attrezzata in piscina (es. con lettino e ombrellone), prenotabile per fasce orarie. & Lettino, Ombrellone \\
         \hline
-        Attività con animali & Esperienza guidata con animali della fattoria didattica.                                            & Visita            \\
+        \textbf{Attività Guidata} & Esperienza organizzata, come una visita alla fattoria didattica o un laboratorio. & Esperienza, Visita \\
         \hline
-        Campo da calcio      & Area sportiva prenotabile per parite e tornei.                                                      & Campo sportivo    \\
+        \textbf{Campo da Calcio} & Area sportiva prenotabile per in fasce orarie per partite e tornei di calcio. & Campo da gioco \\
         \hline
-        Pacchetto            & Combinazione di servizi con prezzo personalizzato.                                                  & Offerta           \\
+        \textbf{Pacchetto Combinato} & Combinazione di più servizi offerti a un prezzo speciale. & Offerta, Pacchetto \\
         \hline
-        Recensione           & Valutazione e commento lascaiti da un cliente su un servizio utilizzato.                            & Valutazione       \\
+        \textbf{Recensione} & Feedback lasciato da un cliente su un servizio, composto da un voto e un commento testuale. & Valutazione, Feedback \\
         \hline
-        Amministratore       & Utente con i privilegi per gestire disponibilità, prenotiazioni e report.                           & Staff             \\
+        \textbf{Staff} & Personale dell'agriturismo con specifici ruoli e permessi per la gestione del sistema. & Amministratore, Gestore, Staff \\
         \hline
-        Evento               & Attività speciale organizzate (tornei, cene a tema).                                                & Attività          \\
+        \textbf{Evento} & Attività speciale con date e capienza definite (es. tornei, cene a tema). & Attività \\
         \hline
-        Menu                 & Proposta gastronimica del ristorante/bar, con allergeni e stagionalità.                             & Menu              \\
+        \textbf{Menù} & Proposta gastronomica del ristorante, con dettagli su piatti, prezzi, allergeni e stagionalità. & Menù \\
         \hline
-        Disponibilità        & Sato temporale e quantitativo di un servizio.                                                       & Capacità residua  \\
+        \textbf{Disponibilità} & Stato di un servizio in un dato momento, che ne definisce la fruibilità in termini quantitativi e temporali. & Capacità Residua \\
         \hline
-        Abbonamento          & Formula di accesso ripetuto a servizi                                                               & Mermbership       \\
+        \textbf{Abbonamento} & Formula di accesso periodico o a ingressi multipli per uno o più servizi (es. piscina). & Membership \\
     \end{tabularx}
 \end{center}
 
